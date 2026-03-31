@@ -1,0 +1,9 @@
+//server ko start krna and db se connect krna
+const app = require('./src/app');
+const connectToDb = require('./src/config/database')
+
+connectToDb()
+
+app.listen(3000,()=>{
+    console.log("app is running on port 3000")
+})
