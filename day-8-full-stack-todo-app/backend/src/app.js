@@ -64,7 +64,7 @@ app.delete("/api/todos/:id",async(req,res)=>{
 
 app.put("/api/todos/:id",async(req,res)=>{
     try{
-        await todoModel.findOneAndReplace({_id : req.params.id},req.body);
+        await todoModel.findOneAndReplace({_id :req.params.id},req.body);
         res.status(200).json({
             success : true,
             message : "todo updated successfully"
