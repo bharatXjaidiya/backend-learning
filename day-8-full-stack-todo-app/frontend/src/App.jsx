@@ -57,7 +57,7 @@ const App = () => {
 
         {(todos.length !== 0) ? <div className="todos px-3 py-2 min-h-[60vh] max-h-[69vh] overflow-y-scroll mb-7">
           {todos.map((todo)=>{
-          return <Todo key={todo._id} title={todo.title} description = {todo.description} isCompleted = {todo.isCompleted} createdAt = {todo.createdAt} url={url} _id = {todo._id} fetchTodos={fetchTodos}/>
+          return <Todo key={todo._id} title={todo.title} description = {todo.description} isCompleted = {todo.isCompleted} createdAt = {todo.createdAt} url={url} _id = {todo._id} fetchTodos={fetchTodos} setTitle={setTitle} setDescription={setDescription}/>     
         })}
         </div> : <h1 className='text-4xl font-extrabold text-purple-400 flex justify-center my-[10vh]'>No Todo Added Yet !</h1>}
 
