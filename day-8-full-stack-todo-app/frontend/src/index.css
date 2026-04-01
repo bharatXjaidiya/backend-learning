@@ -12,3 +12,21 @@ body,html{
   height: 100%;
   background-color: black;
 }
+
+/* Works in Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; /* dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #38BDF8, #22C55E,rgb(189, 44, 189));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0ea5e9, #16a34a,rgb(117, 20, 117));
+}

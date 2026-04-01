@@ -40,9 +40,8 @@ const Todo = ({ title, description, isCompleted, createdAt }) => {
 
     const randomColor = todoColors[Math.floor(Math.random() * todoColors.length)];
 
-    console.log(randomColor.buttons.edit)
     return (
-        <div style={{ backgroundColor: randomColor.bg , border : "2px solid" , borderColor : randomColor.border}} className={`todo flex justify-between mb-3 rounded px-3 py-1`}>
+        <div style={{ backgroundColor: randomColor.bg , border : "2px solid" , borderColor : randomColor.border}} className={`todo flex justify-between mb-2.5 rounded px-3 py-1`}>
             <div className="todo-left">
                 <h1 style={{ color: randomColor.title }} className="title text-xl font-semibold capitalize">{title}</h1>
                 <p style={{ color: randomColor.description }} className='description capitalize'>{description}</p>
