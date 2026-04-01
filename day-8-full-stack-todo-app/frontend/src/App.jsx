@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import axios from 'axios'
 import Todo from './components/Todo';
+import Footer from './components/Footer';
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
@@ -52,13 +53,13 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className='min-h-[90vh]' id='main'>
+      <main  id='main'>
 
-        <div className="todos px-3 py-2 min-h-[78vh] max-h-[78vh] overflow-y-scroll mb-3">
+        {(todos.length !== 0) ? <div className="todos px-3 py-2 min-h-[60vh] max-h-[69vh] overflow-y-scroll mb-7">
           {todos.map((todo)=>{
-          return <Todo key={todo._id} title={todo.title} description = {todo.description} isCompleted = {todo.isCompleted} createdAt = {todo.createdAt}/>
+          return <Todo key={todo._id} title={todo.title} description = {todo.description} isCompleted = {todo.isCompleted} createdAt = {todo.createdAt} url={url} _id = {todo._id} fetchTodos={fetchTodos}/>
         })}
-        </div>
+        </div> : <h1 className='text-4xl font-extrabold text-purple-400 flex justify-center my-[10vh]'>No Todo Added Yet !</h1>}
 
         <div className="addTodo">
           <form className='flex justify-center gap-2' onSubmit={handleSubmit}>
@@ -74,6 +75,7 @@ const App = () => {
         
       </main>
 
+      <Footer/>
 
 
     </>

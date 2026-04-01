@@ -1,7 +1,8 @@
 import React from 'react'
+import axios from 'axios'
 import { FaEdit, FaTrash, FaCheck } from "react-icons/fa";
 
-const Todo = ({ title, description, isCompleted, createdAt }) => {
+const Todo = ({ title, description, isCompleted, createdAt , url , _id , fetchTodos}) => {
     const todoColors = [
         {
             bg: "#0B1220",              // dark card
@@ -40,8 +41,13 @@ const Todo = ({ title, description, isCompleted, createdAt }) => {
 
     const randomColor = todoColors[Math.floor(Math.random() * todoColors.length)];
 
+    async function handleDelete(id){
+        const response = await axios.delete(`${url}/api/todos/${id}`)
+        fetchTodos()
+    }
+
     return (
-        <div style={{ backgroundColor: randomColor.bg , border : "2px solid" , borderColor : randomColor.border}} className={`todo flex justify-between mb-2.5 rounded px-3 py-1`}>
+        <div style={{ backgroundColor: randomColor.bg, border: "2px solid", borderColor: randomColor.border }} className={`todo flex justify-between mb-2.5 rounded px-3 py-1`}>
             <div className="todo-left">
                 <h1 style={{ color: randomColor.title }} className="title text-xl font-semibold capitalize">{title}</h1>
                 <p style={{ color: randomColor.description }} className='description capitalize'>{description}</p>
@@ -60,7 +66,9 @@ const Todo = ({ title, description, isCompleted, createdAt }) => {
                 />
 
                 {/* Delete */}
-                <FaTrash
+                <FaTrash onClick={(e)=>{
+                    handleDelete(_id)
+                }}
                     style={{ color: randomColor.buttons.delete }}
                     className="cursor-pointer transition duration-200 hover:scale-110"
                 />
