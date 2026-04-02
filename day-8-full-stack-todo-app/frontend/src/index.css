@@ -30,3 +30,9 @@ body,html{
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #0ea5e9, #16a34a,rgb(117, 20, 117));
 }
+
+@media (width < 420px) {
+  input{
+    width: 175px;
+  }
+}

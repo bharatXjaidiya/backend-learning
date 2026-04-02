@@ -62,13 +62,17 @@ const App = () => {
         </div> : <h1 className='text-4xl font-extrabold text-purple-400 flex justify-center my-[10vh]'>No Todo Added Yet !</h1>}
 
         <div className="addTodo">
-          <form className='flex justify-center gap-2' onSubmit={handleSubmit}>
+          <form className='flex flex-col items-center sm:flex-row justify-center gap-2' onSubmit={handleSubmit}>
+            <div className="form-left flex gap-2 @sm:flex-col">
+              <input type="text" placeholder='Title' value={title} name = "title" onChange={(e)=>{changeHandler(e)}} className='text-white border-2 rounded-2xl sm:px-3 sm:py-2 px-2 py-1 text-center border-gray-400'/>
 
-            <input type="text" placeholder='Title' value={title} name = "title" onChange={(e)=>{changeHandler(e)}} className='text-white border-2 rounded-2xl px-3 py-2 text-center border-gray-400'/>
-
-            <input type="text" placeholder='Description' value={description} name="description" onChange={(e)=>{changeHandler(e)}} className='text-white border-2 rounded-2xl px-3 py-2 text-center border-gray-400' />
-
-            <button className='add-todo text-white border-none rounded-2xl px-4 py-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 ml-2 hover:px-5 hover:py-3 transition-all'>Add Todo</button>
+            <input type="text" placeholder='Description' value={description} name="description" onChange={(e)=>{changeHandler(e)}} className='text-white border-2 px-2 py-1 rounded-2xl sm:px-3 sm:py-2 text-center border-gray-400' />
+            </div>
+            
+            <div className="form-right">
+              <button className='add-todo text-white border-none rounded-2xl px-4 sm:py-2 py-1 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 ml-2 hover:px-5 hover:py-3 transition-all'>Add Todo</button>
+            </div>
+            
           </form>
           
         </div>

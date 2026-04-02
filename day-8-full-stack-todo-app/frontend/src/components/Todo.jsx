@@ -73,8 +73,8 @@ async function handleEdit(id){
             className={`todo flex justify-between mb-2.5 rounded px-3 py-1 ${isCompleted ? "opacity-50 line-through" : ""}`}
         >
             <div className="todo-left">
-                <h1 style={{ color: randomColor.title }} className="title text-xl font-semibold capitalize">{title}</h1>
-                <p style={{ color: randomColor.description }} className='description capitalize'>{description}</p>
+                <h1 style={{ color: randomColor.title }} className="title sm:text-xl text-md font-semibold capitalize">{title}</h1>
+                <p style={{ color: randomColor.description }} className='description capitalize sm:text-xl text-xs'>{description}</p>
             </div>
             <div className="todo-right flex items-center gap-3 text-xl">
                 {/* Edit */}
