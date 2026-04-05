@@ -8,7 +8,7 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static("./public"))
 //end-points / rest-api's
 
 app.post("/api/todos",async(req,res)=>{
