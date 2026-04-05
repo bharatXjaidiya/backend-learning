@@ -7,7 +7,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("")
-  const url = "http://localhost:3000"
+  const url = "https://backend-learning-ovin.onrender.com"
 
   async function fetchTodos() {
       const response = await axios.get(`${url}/api/todos`);
