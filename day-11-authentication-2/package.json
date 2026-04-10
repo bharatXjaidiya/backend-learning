@@ -1,11 +1,11 @@
 {
-  "name": "day-10-authentication",
+  "name": "day-11-authentication-2",
   "version": "1.0.0",
   "description": "",
-  "main": "sever.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "type": "commonjs",
   "dependencies": {
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
